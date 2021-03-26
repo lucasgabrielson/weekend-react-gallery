@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios'; 
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
     // load students on DOM load
     useEffect(() => { getGallery() }, [])
-    
+
     const [ gallery, setGallery ] = useState([]);
 
     const getGallery = () => {
@@ -14,6 +15,7 @@ function App() {
       axios.get( '/gallery' )
         .then( response => {
           console.log( 'back from GET with', response.data);
+          setGallery( response.data );
         })
     }
 
@@ -22,8 +24,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/fran_cream_ale.jpg" height='200' width='200'/>
+        <GalleryList gallery={ gallery } />
       </div>
     );
 }
