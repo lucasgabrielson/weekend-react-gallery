@@ -19,12 +19,24 @@ function App() {
         })
     }
 
+    const addLike = ( id ) => {
+      console.log( 'in addLike', id);
+      axios.put( '/gallery/like/' + id )
+        .then( response => {
+          console.log( 'back from PUT with', response );
+          getGallery();
+        }).catch( err => {
+          console.log( err );
+          alert( 'erroring updating likes' );
+        })
+    }
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList gallery={ gallery } />
+        <GalleryList gallery={ gallery } addLike = {addLike} />
       </div>
     );
 }
