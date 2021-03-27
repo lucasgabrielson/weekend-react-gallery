@@ -1,4 +1,5 @@
 import { useState } from 'react'; 
+import './GalleryItem.css'
 
 function GalleryItem( props ) {
     const [showImage, setShowImage] = useState( false );
@@ -6,7 +7,7 @@ function GalleryItem( props ) {
     let displayImage = () => {
         let display = <img src={props.path} />
         if( showImage ) {
-            display = <p>{props.description}</p>
+            display = <div className='wrapper'><p>{props.description}</p></div>
         }
         return display;
     }
@@ -18,8 +19,6 @@ function GalleryItem( props ) {
         <>
             <div onClick = {toggleImage}>
                 {displayImage()}
-            </div>    
-            <div>
                 <p>Likes: {props.likes}</p>
                 <button onClick = {() => props.addLike( props.id )}>Like Me</button>
             </div>
