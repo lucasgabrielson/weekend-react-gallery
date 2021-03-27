@@ -15,6 +15,7 @@ function GalleryItem( props ) {
     let toggleImage = () => {
         setShowImage( !showImage );
     }
+
     return(
         <>
             <div>

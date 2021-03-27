@@ -11,7 +11,7 @@ function App() {
     const [ gallery, setGallery ] = useState([]);
 
     const getGallery = () => {
-      console.log( 'in getGalley' );
+      console.log( 'in getGallery' );
       axios.get( '/gallery' )
         .then( response => {
           console.log( 'back from GET with', response.data);
@@ -37,6 +37,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList gallery={ gallery } addLike = {addLike} />
+        <p>&copy; Lucas Gabrielson </p>
       </div>
     );
 }
