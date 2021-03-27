@@ -5,9 +5,9 @@ function GalleryItem( props ) {
     const [showImage, setShowImage] = useState( false );
 
     let displayImage = () => {
-        let display = <img src={props.path} />
+        let display = <img onClick = {toggleImage} src={props.path} />
         if( showImage ) {
-            display = <div className='wrapper'><p>{props.description}</p></div>
+            display = <div onClick = {toggleImage} className='wrapper'><p>{props.description}</p></div>
         }
         return display;
     }
@@ -17,10 +17,8 @@ function GalleryItem( props ) {
     }
     return(
         <>
-            <div onClick = {toggleImage}>
-                {displayImage()}
-            </div>
             <div>
+                {displayImage()}
                 <p>Likes: {props.likes}</p>
                 <button onClick = {() => props.addLike( props.id )}>Like Me</button>
             </div>
