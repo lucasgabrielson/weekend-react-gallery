@@ -4,3 +4,24 @@
     width: 175px;
     margin-left: 1.5rem;
 }
+
+.reaction {
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr );
+    grid-template-areas:
+        "l l l l l l d d d d d d d"
+        "l l l l l l d d d d d d d";
+    justify-content: space-evenly;
+}
+
+.delete {
+    grid-area: d;
+    align-self: center;
+    justify-self: center;
+}
+
+.likes {
+    grid-area: l;
+    align-self: center;
+    justify-self: center;
+}

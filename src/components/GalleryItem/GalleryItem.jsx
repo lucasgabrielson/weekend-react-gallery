@@ -1,6 +1,7 @@
 import { useState } from 'react'; 
-import './GalleryItem.css'
-import { FaThumbsUp } from 'react-icons/fa'
+import './GalleryItem.css';
+import { FaThumbsUp } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 function GalleryItem( props ) {
     const [showImage, setShowImage] = useState( false );
@@ -21,8 +22,9 @@ function GalleryItem( props ) {
         <>
             <div>
                 {displayImage()}
-                <div>
-                    <FaThumbsUp onClick = {() => props.addLike( props.id )} /> : {props.likes}  
+                <div className = 'reaction'>
+                    <span className = "likes"><FaThumbsUp onClick = {() => props.addLike( props.id )} /> : {props.likes} </span>           
+                    <span className = "delete"><FaTimes style={ {color:'red'} } onClick = {() => props.deleteImage( props.id )} /></span>
                 </div>    
             </div>
         </>

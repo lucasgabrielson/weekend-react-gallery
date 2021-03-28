@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import GalleryList from '../GalleryList/GalleryList';
 import Form from '../Form/Form'
+import swal from 'sweetalert';
 
 function App() {
     // load students on DOM load
@@ -51,6 +52,34 @@ function App() {
         })
     }
 
+    const deleteImage = ( id ) => {
+      console.log( 'in deleteImage' );
+      swal({
+        title: 'Are you sure you want to delete this image',
+        text: '. . . forever?',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true
+      }).then( willDelete => {
+        if( willDelete ) {
+          swal( 'The image in question has been neutralized!', {
+            icon: 'success',
+          });
+          axios.delete( '/gallery/' + id )
+            .then( response => {
+              console.log( response );
+              getGallery();
+            }).catch( err => {
+              alert( 'error deleting image' );
+              console.log( err );
+            })
+        } else {
+          swal( 'The image is safe -- for now' );
+        }
+
+      }) // end sweetalert  
+    } // end deleteImage
+
     return (
       <div className="App">
         <header className="App-header">
@@ -63,7 +92,7 @@ function App() {
           setImageDescription = { setImageDescription }
           addImage = { addImage }
         />
-        <GalleryList gallery={ gallery } addLike = {addLike} />
+        <GalleryList gallery={ gallery } addLike = {addLike} deleteImage = { deleteImage } />
         <p>&copy; Lucas Gabrielson </p>
       </div>
     );

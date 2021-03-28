@@ -41,4 +41,16 @@ router.post( '/', ( req, res ) => {
         })
 })
 
+router.delete( '/:id', ( req, res ) => {
+    console.log( 'gallery.router delete' );
+    let sqlText = 'DELETE FROM gallery WHERE "id" = $1';
+    pool.query( sqlText, [ req.params.id ])
+        .then( results => {
+            res.sendStatus( 200 );
+        }).catch( err => {
+            console.log( err );
+            res.sendStatus( 500 ); 
+        })
+})
+
 module.exports = router;
