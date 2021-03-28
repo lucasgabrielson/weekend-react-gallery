@@ -1,21 +1,31 @@
 .form-content {
     display: grid;
-    grid-auto-rows: 50px;
-    grid-template-columns: repeat( 12, 1fr );
+    grid-template-columns: repeat( 13, 1fr );
     border: solid 5px #088190;
+    grid-template-areas:
+        "l l s s s s s s s s s s b"
+        "l l d d d d d d d d d d b";
+    justify-content: space-evenly;
 }
 
-/* .label {
-    display: inline;
-} */
+.label {
+    grid-area: l;
+    align-self: center;
+    justify-self: center;
+}
 
-.input {
-    grid-column: 3 / 11;
-    height: 20px;
-    margin-top: .5rem;
+.src {
+    grid-area: s;
+    margin: .25rem;
+}
+
+.description {
+    grid-area: d;
+    margin: .25rem;
 }
 
 .submit {
-    grid-column: 12 /  13;
-    margin-top: .5rem;
+    grid-area: b;
+    align-self: center;
+    justify-self: center;
 }
