@@ -19,9 +19,8 @@ To accomplish this I used React to create the header, gallery-list, gallery-item
 <img width="1137" alt="Screen Shot 2021-03-28 at 5 03 58 PM" src="https://user-images.githubusercontent.com/74149109/112769623-ab5abd00-8fe7-11eb-82cc-b1a284967151.png">
 
 <img width="495" alt="Screen Shot 2021-03-28 at 5 04 23 PM" src="https://user-images.githubusercontent.com/74149109/112769627-adbd1700-8fe7-11eb-8358-304f7292bba9.png">
-### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
+### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 
