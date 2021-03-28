@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import GalleryList from '../GalleryList/GalleryList';
+import FormContainer from '../FormContainer/FormContainer'
 
 function App() {
     // load students on DOM load
@@ -36,6 +37,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+        <FormContainer />
         <GalleryList gallery={ gallery } addLike = {addLike} />
         <p>&copy; Lucas Gabrielson </p>
       </div>

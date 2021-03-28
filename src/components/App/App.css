@@ -1,13 +1,14 @@
 .App {
   text-align: center;
-  background-color: #ECEFF0;
+  background-color: #ECEFF0; 
 }
 
 .App-header {
   background-color: #11204D;
-  padding: 1em;
+  padding: 1rem;
   color: #ECEFF0;
   margin-bottom: 1em;
+  grid-column: 1 / -1;
 }
 
 .App-title {
@@ -15,6 +16,6 @@
 }
 
 img {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
 }

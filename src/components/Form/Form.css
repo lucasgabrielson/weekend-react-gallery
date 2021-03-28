@@ -1,0 +1,21 @@
+.form-content {
+    display: grid;
+    grid-auto-rows: 50px;
+    grid-template-columns: repeat( 12, 1fr );
+    border: solid 5px #088190;
+}
+
+/* .label {
+    display: inline;
+} */
+
+.input {
+    grid-column: 3 / 11;
+    height: 20px;
+    margin-top: .5rem;
+}
+
+.submit {
+    grid-column: 12 /  13;
+    margin-top: .5rem;
+}

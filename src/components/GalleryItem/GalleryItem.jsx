@@ -1,5 +1,6 @@
 import { useState } from 'react'; 
 import './GalleryItem.css'
+import { FaThumbsUp } from 'react-icons/fa'
 
 function GalleryItem( props ) {
     const [showImage, setShowImage] = useState( false );
@@ -20,8 +21,9 @@ function GalleryItem( props ) {
         <>
             <div>
                 {displayImage()}
-                <p>Likes: {props.likes}</p>
-                <button onClick = {() => props.addLike( props.id )}>Like Me</button>
+                <div>
+                    <FaThumbsUp onClick = {() => props.addLike( props.id )} /> : {props.likes}  
+                </div>    
             </div>
         </>
     )

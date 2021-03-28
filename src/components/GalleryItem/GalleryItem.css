@@ -1,10 +1,6 @@
-div {
-    display: inline-block;
-    margin: 1rem;
-}
-
 .wrapper {
-    border: solid 5px #088190;
-    width: 175px;
+    border: solid 3px #088190;
     height: 175px;
+    width: 175px;
+    margin-left: 1.5rem;
 }
