@@ -8,7 +8,7 @@ config = {
         port: 5432,
         database: process.env.DATABASE_NAME || 'react_gallery',
         max: 15,
-        idleTimeoutMillis: 30000       
+        idleTimeoutMillis: 20000       
 };
 
 const pool = new pg.Pool( config );
