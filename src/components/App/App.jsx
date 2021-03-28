@@ -7,7 +7,6 @@ import Form from '../Form/Form'
 import swal from 'sweetalert';
 
 function App() {
-    // load students on DOM load
     useEffect(() => { getGallery() }, [])
 
     const [ gallery, setGallery ] = useState([]);
@@ -29,7 +28,7 @@ function App() {
         alert( 'error adding image' );
         console.log( err );
       })
-    }
+    } // end addImage
 
     const getGallery = () => {
       console.log( 'in getGallery' );
@@ -38,7 +37,7 @@ function App() {
           console.log( 'back from GET with', response.data);
           setGallery( response.data );
         })
-    }
+    } // end getGalley
 
     const addLike = ( id ) => {
       console.log( 'in addLike', id);
@@ -50,7 +49,7 @@ function App() {
           console.log( err );
           alert( 'erroring updating likes' );
         })
-    }
+    } // end addLike
 
     const deleteImage = ( id ) => {
       console.log( 'in deleteImage' );
