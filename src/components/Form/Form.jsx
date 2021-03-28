@@ -5,7 +5,8 @@ function Form() {
     return (
         <div className = "form-content">
             <label className="label">Add Image</label>
-            <input className = "input" type="text" placeholder = "Image Address" />
+            <input className = "src" type="text" placeholder = "Image Address" />
+            <input className = "description" type="text" placeholder = "Image Description" />
             <FaPaperPlane className="submit"/>
         </div>
     )
