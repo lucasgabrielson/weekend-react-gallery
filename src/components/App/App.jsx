@@ -15,7 +15,10 @@ function App() {
 
     const addImage = () => {
       console.log( 'in addImage' );
-      axios.post( '/gallery', {
+      if( imageAddress === '' || imageDescription === '') {
+        alert( 'enter in an image address or description');
+      } else {
+        axios.post( '/gallery', {
         path: imageAddress,
         description: imageDescription,
         likes: 0
@@ -28,6 +31,7 @@ function App() {
         alert( 'error adding image' );
         console.log( err );
       })
+      }
     } // end addImage
 
     const getGallery = () => {
