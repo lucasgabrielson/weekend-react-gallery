@@ -3,9 +3,9 @@ const url = require( 'url' );
 
 let config = {};
 
-if( process.env.DATABASE_URL ) {
+if( process.env.DATABASE_NAME ) {
     config = {
-        connectionString: process.env.DATABASE_URL,
+        connectionString: process.env.DATABASE_NAME,
         ssl: { rejectUnauthorized: false },
     };
 } else {
