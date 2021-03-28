@@ -30,7 +30,7 @@ router.get( '/', ( req, res ) => {
 })
 
 router.post( '/', ( req, res ) => {
-    console.log( 'gallery.router POST' );
+    console.log( 'gallery.router POST ' );
     let sqlText = 'INSERT INTO gallery (path, description, likes) VALUES ($1, $2, $3)';
     pool.query( sqlText, [ req.body.path, req.body.description, req.body.likes ] )
         .then( results => {
