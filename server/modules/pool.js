@@ -3,20 +3,13 @@ const url = require( 'url' );
 
 let config = {};
 
-if( process.env.DATABASE_NAME ) {
-    config = {
-        connectionString: process.env.DATABASE_NAME,
-        ssl: { rejectUnauthorized: false },
-    };
-} else {
-    config = {
-        host: 'localhost',
+config = {
+    host: 'localhost',
         port: 5432,
-        database: 'react_gallery',
+        database: process.env.DATABASE_NAME || 'react_gallery',
         max: 15,
-        idleTimeoutMillis: 30000
-    };
-}
+        idleTimeoutMillis: 30000       
+};
 
 const pool = new pg.Pool( config );
 
